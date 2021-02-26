@@ -7,21 +7,25 @@
         {
             "name": "klx-dev",
             "email": "sholichul.huda@kly.id"
+        },
+        {
+            "name": "Angga Lanuma",
+            "email": "lanuma.angga@gmail.com"
         }
     ],
     "require": {
-        "php": ">=7.2",
-        "nunomaduro/larastan": "^0.5.2",
-        "phpro/grumphp": "^0.17.2"
+        "php": "^7.2",
+        "nunomaduro/larastan": "^0.7.0",
+        "phpro/grumphp": "^1.3"
     },
     "autoload": {
         "psr-4": {
-            "Klx\\GrumPhpX\\": "src/"
+            "Kly\\GrumPhpX\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Klx\\GrumPhpX\\Tests\\": "tests/"
+            "Kly\\GrumPhpX\\Tests\\": "tests/"
         }
     },
     "suggest": {},
