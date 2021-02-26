@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Klx\GrumPhpX;
+namespace Kly\GrumPhpX;
 
+use Kly\GrumPhpX\Task\Larastan;
 use GrumPHP\Extension\ExtensionInterface;
-use Klx\GrumPhpX\Task\Larastan;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class Extension implements ExtensionInterface
 {

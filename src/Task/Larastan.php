@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Klx\GrumPhpX\Task;
+namespace Kly\GrumPhpX\Task;
 
 use GrumPHP\Runner\TaskResult;
-use GrumPHP\Runner\TaskResultInterface;
+use GrumPHP\Task\Context\RunContext;
 use GrumPHP\Task\AbstractExternalTask;
+use GrumPHP\Runner\TaskResultInterface;
 use GrumPHP\Task\Context\ContextInterface;
 use GrumPHP\Task\Context\GitPreCommitContext;
-use GrumPHP\Task\Context\RunContext;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class Larastan extends AbstractExternalTask
@@ -19,7 +19,7 @@ class Larastan extends AbstractExternalTask
         return 'larastan';
     }
 
-    public function getConfigurableOptions(): OptionsResolver
+    public static function getConfigurableOptions(): OptionsResolver
     {
         $resolver = new OptionsResolver();
         $resolver->setDefaults([
@@ -42,7 +42,7 @@ class Larastan extends AbstractExternalTask
 
     public function run(ContextInterface $context): TaskResultInterface
     {
-        $config = $this->getConfiguration();
+        $config = $this->getConfigurableOptions();
 
         $arguments = $this->processBuilder->createArgumentsForCommand('php');
         $arguments->add('./vendor/bin/phpstan');
