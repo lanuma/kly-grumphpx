@@ -5,12 +5,12 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "klx-dev",
-            "email": "sholichul.huda@kly.id"
-        },
-        {
             "name": "Angga Lanuma",
             "email": "lanuma.angga@gmail.com"
+        },
+        {
+            "name": "klx-dev",
+            "email": "sholichul.huda@kly.id"
         }
     ],
     "require": {
