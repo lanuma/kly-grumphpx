@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Kly\GrumPhpX\Task;
 
 use GrumPHP\Runner\TaskResult;
+use GrumPHP\Task\TaskInterface;
 use GrumPHP\Task\Context\RunContext;
 use GrumPHP\Task\AbstractExternalTask;
 use GrumPHP\Runner\TaskResultInterface;
@@ -12,7 +13,7 @@ use GrumPHP\Task\Context\ContextInterface;
 use GrumPHP\Task\Context\GitPreCommitContext;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class Larastan extends AbstractExternalTask
+class Larastan extends AbstractExternalTask implements TaskInterface
 {
     public function getName(): string
     {
@@ -42,7 +43,7 @@ class Larastan extends AbstractExternalTask
 
     public function run(ContextInterface $context): TaskResultInterface
     {
-        $config = $this->getConfigurableOptions();
+        $config = $this->getConfig()->getOptions();
 
         $arguments = $this->processBuilder->createArgumentsForCommand('php');
         $arguments->add('./vendor/bin/phpstan');
